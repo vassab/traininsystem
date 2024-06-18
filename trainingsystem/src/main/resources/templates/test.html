@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест по курсу</title>
+</head>
+<body>
+<header>
+  <h1>Voyti v IT</h1>
+</header>
+<main>
+  <h2>Тест по курсу <span th:text="${course}"></span></h2>
+  <form th:action="@{/test}" method="post">
+    <input type="hidden" name="course" th:value="${course}" />
+
+    <div th:if="${course} == 'cplusplus'">
+      <p>1. Какой тип языка C++?</p>
+      <input type="radio" name="q1" value="Компилируемый" /> Компилируемый<br>
+      <input type="radio" name="q1" value="Интерпретируемый" /> Интерпретируемый<br>
+      <input type="radio" name="q1" value="Скриптовый" /> Скриптовый<br>
+
+      <p>2. Что является преимуществом C++?</p>
+      <input type="radio" name="q2" value="Гибкость" /> Гибкость<br>
+      <input type="radio" name="q2" value="Медлительность" /> Медлительность<br>
+      <input type="radio" name="q2" value="Легкость" /> Легкость<br>
+
+      <p>3. Каков основной входной пункт программы на C++?</p>
+      <input type="radio" name="q3" value="int main()" /> int main()<br>
+      <input type="radio" name="q3" value="void main()" /> void main()<br>
+      <input type="radio" name="q3" value="main()" /> main()<br>
+    </div>
+
+    <div th:if="${course} == 'csharp'">
+      <p>1. Кто разработал C#?</p>
+      <input type="radio" name="q1" value="Microsoft" /> Microsoft<br>
+      <input type="radio" name="q1" value="Oracle" /> Oracle<br>
+      <input type="radio" name="q1" value="Google" /> Google<br>
+
+      <p>2. Какой тип данных используется для целых чисел в C#?</p>
+      <input type="radio" name="q2" value="float" /> float<br>
+      <input type="radio" name="q2" value="string" /> string<br>
+      <input type="radio" name="q2" value="int" /> int<br>
+
+      <p>3. Какой оператор используется для условных выражений в C#?</p>
+      <input type="radio" name="q3" value="for" /> for<br>
+      <input type="radio" name="q3" value="if" /> if<br>
+      <input type="radio" name="q3" value="while" /> while<br>
+    </div>
+
+    <button type="submit">Отправить</button>
+  </form>
+</main>
+</body>
+</html>
+
+

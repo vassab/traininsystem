@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyti v IT</title>
+    <style>
+        .login-button {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+        }
+        .course-button {
+            margin: 5px;
+        }
+    </style>
+    <script>
+        function confirmLogout(event) {
+            if (!confirm('Вы уверены, что хотите выйти?')) {
+                event.preventDefault();
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Voyti v IT</h1>
+    <div class="login-button">
+        <div th:if="${#authentication == null}">
+            <button onclick="location.href='/login'">Вход</button>
+        </div>
+        <div th:if="${#authentication != null}">
+            <form action="/logout" method="post" onsubmit="confirmLogout(event)">
+                <button type="submit">Выход</button>
+            </form>
+        </div>
+    </div>
+</header>
+<main>
+    <h2>Courses</h2>
+    <div>
+        <button class="course-button" onclick="location.href='/cplusplus'">C++</button>
+        <button class="course-button" onclick="location.href='/csharp'">C#</button>
+        <button class="course-button" onclick="location.href='/unity'">Unity</button>
+    </div>
+    <h2>Trainings</h2>
+    <div>
+        <button class="course-button" onclick="location.href='/test?course=cplusplus'">C++</button>
+        <button class="course-button" onclick="location.href='/test?course=csharp'">C#</button>
+        <button class="course-button" onclick="location.href='/test/unity'">Unity</button>
+    </div>
+    <button onclick="window.location.href='/new-course'">Создать курс</button>
+</main>
+</body>
+</html>

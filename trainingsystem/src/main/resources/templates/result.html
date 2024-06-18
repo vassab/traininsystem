@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат теста</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<main>
+    <h2>Результат теста</h2>
+    <p>Вы набрали <span th:text="${score}"></span> из 3.</p>
+    <a href="/test?course=${course}">Пройти тест заново</a>
+</main>
+</body>
+</html>
+

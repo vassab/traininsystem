@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы ООП</title>
+</head>
+<body>
+<header>
+    <h1>Voyti v IT</h1>
+</header>
+<main>
+    <h2>Основы ООП</h2>
+    <p>Объектно-ориентированное программирование (ООП) в C# основано на четырех принципах: инкапсуляция, наследование, полиморфизм и абстракция.</p>
+    <h3>Инкапсуляция</h3>
+    <p>Инкапсуляция скрывает внутренние детали объекта и предоставляет только необходимые методы для взаимодействия с ним.</p>
+    <pre>
+            <code>
+class Person {
+    private string name;
+    private int age;
+
+    public string Name {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public int Age {
+        get { return age; }
+        set { age = value; }
+    }
+}
+            </code>
+        </pre>
+    <h3>Наследование</h3>
+    <p>Наследование позволяет создавать новые классы на основе существующих.</p>
+    <pre>
+            <code>
+class Employee : Person {
+    public string Company { get; set; }
+}
+            </code>
+        </pre>
+    <h3>Полиморфизм</h3>
+    <p>Полиморфизм позволяет использовать объекты производных классов через интерфейсы или базовые классы.</p>
+    <pre>
+            <code>
+class Program {
+    static void Main(string[] args) {
+        Person person = new Employee();
+    }
+}
+            </code>
+        </pre>
+    <h3>Абстракция</h3>
+    <p>Абстракция позволяет создавать абстрактные классы и методы, которые могут быть реализованы в производных классах.</p>
+    <pre>
+            <code>
+abstract class Animal {
+    public abstract void MakeSound();
+}
+
+class Dog : Animal {
+    public override void MakeSound() {
+        Console.WriteLine("Woof");
+    }
+}
+            </code>
+        </pre>
+    <a href="/csharp">Назад к курсу</a>
+</main>
+</body>
+</html>

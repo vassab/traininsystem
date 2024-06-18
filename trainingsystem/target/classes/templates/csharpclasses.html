@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Классы и объекты</title>
+</head>
+<body>
+<header>
+    <h1>Voyti v IT</h1>
+</header>
+<main>
+    <h2>Классы и объекты</h2>
+    <p>Классы являются основой объектно-ориентированного программирования в C#. Объекты являются экземплярами классов.</p>
+    <pre>
+            <code>
+class Person {
+    public string Name;
+    public int Age;
+
+    public void Introduce() {
+        Console.WriteLine($"Hello, my name is {Name} and I am {Age} years old.");
+    }
+}
+
+class Program {
+    static void Main(string[] args) {
+        Person person = new Person();
+        person.Name = "John";
+        person.Age = 30;
+        person.Introduce();
+    }
+}
+            </code>
+        </pre>
+    <a href="/csharp">Назад к курсу</a>
+</main>
+</body>
+</html>
